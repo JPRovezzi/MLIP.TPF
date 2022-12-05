@@ -50,3 +50,9 @@ plt.xlabel(variable1)
 plt.ylabel(variable2)
 plt.show()
 # %%
+import plotly.express as px
+
+fig = px.scatter(df, y=variable2, x=variable1, text="pixel_id")
+fig.update_traces(marker_size=2)
+#fig.show() #en Jupyter
+fig.show(renderer="colab") #En Colab
