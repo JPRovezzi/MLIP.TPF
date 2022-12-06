@@ -8,6 +8,7 @@ import pandas as pd
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.neighbors import KNeighborsClassifier
 
+# %%
 imagen_cv=cv2.imread('input.jpg')
 imagen_cv=imagen_cv[15:,15:,:]
 print(imagen_cv.shape)
@@ -15,12 +16,12 @@ imagen=imagen_cv.copy()
 imagen[:,:,[2,1,0]]=imagen_cv #cv2 lee en orden BGR'
 print('dimensiones de la imagen: ', imagen.shape, 'es decir: ', imagen.shape[0]*imagen.shape[1], '=', imagen.shape[0],'x',imagen.shape[1],' pixeles RGB')
 print('tipo de datos: ', imagen.dtype)
-
+#%%
 cv2.startWindowThread()
 #cv2.namedWindow("preview")
 cv2.imshow('ImageWindow',imagen_cv)
 cv2.waitKey()
-
+#%%
 dims=imagen.shape
 cant_filas=dims[0]
 cant_columnas=dims[1]
@@ -56,3 +57,7 @@ fig = px.scatter(df, y=variable2, x=variable1, text="pixel_id")
 fig.update_traces(marker_size=2)
 #fig.show() #en Jupyter
 fig.show(renderer="colab") #En Colab
+
+
+
+# %%
